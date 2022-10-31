@@ -1,0 +1,24 @@
+{
+  "name": "movie-database",
+  "version": "1.0.0",
+  "description": "movie sql database excercise",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/duffylaura/movie-database.git"
+  },
+  "author": "Laura Duffy, Mari Ma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/duffylaura/movie-database/issues"
+  },
+  "homepage": "https://github.com/duffylaura/movie-database#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^2.2.5"
+  }
+}
