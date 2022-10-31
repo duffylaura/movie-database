@@ -35,4 +35,21 @@ api.get('/movie-reviews', (req, res) => {
     });
 });
 
+api.post('/add-movie', (req, res) => {
+    //grabbing the object of the request, shoudl have movie_name: new Name
+    let newMovie = (req.body);
+    console.log(newMovie);
+    connection.query('INSERT INTO movies (movie_name) VALUES (?)', [newMovie.movie_name], (err) => {
+        err ? console.error(err) : res.send(`sucessfully inserted new Movie called ${newMovie.movie_name}`);
+    });
+});
+
+api.delete('/movie/:id', (req, res) => {
+    let deleteMovieID = (req.params.id);
+    console.log(deleteMovieID);
+    connection.query('DELETE FROM movies WHERE id = ?', [deleteMovieID], (err) => {
+        err ? console.error(err) : res.send(`sucessfully deleted movie ID ${deleteMovieID}`);
+    });
+});
+
 module.exports = (api);
