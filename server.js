@@ -9,9 +9,8 @@
 */
 
 const express = require("express");
-const { appendFile } = require("fs");
 const mysql = require("mysql2");
-const api = require('./routes/index.js');
+const api = require('./routes');
 const PORT = 3001;
 const app = express();
 
@@ -27,3 +26,11 @@ const connection = mysql.createConnection({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
+
+app.get('/', (req, res) => {
+    res.send("please navigate to http://localhost:3001/api for list of api command")
+})
+
+app.listen(PORT, () =>
+    console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
