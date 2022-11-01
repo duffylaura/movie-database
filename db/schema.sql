@@ -12,7 +12,7 @@ CREATE TABLE movies (
 CREATE TABLE reviews (
     id INT NOT NULL AUTO_INCREMENT, 
     movie_id INT, 
-    review TEXT, 
+    review VARCHAR(100) NOT NULL DEFAULT "no reviews yet",
     PRIMARY KEY (id), 
     FOREIGN KEY (movie_id)
     REFERENCES movies(id)
