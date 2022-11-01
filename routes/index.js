@@ -52,4 +52,16 @@ api.delete('/movie/:id', (req, res) => {
     });
 });
 
+api.put('/review/:id', (req, res) => {
+    let newReview = (req.body.review);
+    let movieID = (parseInt(req.params.id));
+    console.log(newReview + "\n" + movieID);
+    console.log(typeof movieID);
+    connection.query('UPDATE reviews SET review = ? WHERE Movie_ID = ?', [newReview, movieID], (err) => {
+        // connection.query('INSERT INTO reviews (movie_id, review) VALUES(?,?) ON DUPLICATE KEY UPDATE review', [newReview, movieID], (err) => {
+        err ? console.error(err) : res.send(`sucessfully updated review for movie ID ${movieID}`);
+    });
+
+});
+
 module.exports = (api);
