@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
 );
 
 api.get('/', (req, res) => {
-    res.send("you have the following route as options:", "\n", "/api/add-movie", '\n', '/api/movie/:id', '\n', '/api/movie-review', '\n', '/api/review/:id');
+    res.send("you have the following route as options:" + "/api/add-movie" + '/api/movie/:id' + '/api/movie-review' + '/api/review/:id');
 });
 
 api.get('/movies', (req, res) => {
